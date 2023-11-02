@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "build": "node index.js"
-  },
+    "start": "node index.js",
+    "build": "echo 'Build script placeholder'"
+  },  
   "dependencies": {
     "express": "^4.18.2"
   }
