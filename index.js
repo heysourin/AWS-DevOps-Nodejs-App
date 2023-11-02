@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000 // Use port 3000 by default, or an environment variable if available
+const port = process.env.PORT || 3001 // Use port 3000 by default, or an environment variable if available
 
 // Serve static files from a directory (in this case, your HTML file)
 app.use(express.static(__dirname))
