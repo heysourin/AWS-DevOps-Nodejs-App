@@ -17,5 +17,5 @@ phases:
       - zip -r artifacts.zip . # Added this line
 artifacts:
   files:
-    - 'artifacts.zip' # Modified this line
+    - '**/*' # Modified this line
   discard-paths: yes
