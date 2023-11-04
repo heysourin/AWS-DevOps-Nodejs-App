@@ -10,14 +10,12 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - npm run build # Assume this command generates 'output.zip'
+      - npm run build
   post_build:
     commands:
-      - echo post-build phase
-      - echo Build completed on `date`
-      - echo Artifacts copied to S3
-
+      - echo Zipping artifacts
+      - zip -r artifacts.zip . # Added this line
 artifacts:
   files:
-    - "**/*" # Specify the generated zip file here
+    - 'artifacts.zip' # Modified this line
   discard-paths: yes
