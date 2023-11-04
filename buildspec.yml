@@ -15,7 +15,7 @@ phases:
     commands:
       - echo Zipping artifacts
       - echo `pwd`
-      - zip -r artifacts.zip . # Added this line
+      - zip artifacts.zip * # Added this line
 artifacts:
   files:
     - '**/*' # Modified this line
