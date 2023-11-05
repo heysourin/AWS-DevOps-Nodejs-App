@@ -1,26 +1,25 @@
-name: ci
+name: Run Tests
 
 on:
-  push:
-    branches:
-        - main  
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest    
-    steps:
-        - uses: actions/checkout@v3
-        - name: hello world
-          run: echo "Hello world"
-          shell: bash
-          
-          
-  goodbye:
+  test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.x', '16.x', '18.x']
+
     steps:
-        - name: goodbye world
-          run: echo "Goodbye world"
-          shell: bash
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test
