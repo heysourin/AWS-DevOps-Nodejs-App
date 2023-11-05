@@ -1,9 +1,13 @@
 {
   "scripts": {
     "start": "node index.js",
-    "build": "echo 'Build script placeholder'"
+    "build": "echo 'Build script placeholder'",
+    "test": "jest"
   },  
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }
